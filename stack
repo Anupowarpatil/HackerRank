@@ -1,6 +1,6 @@
 #include <iostream>
 #define MAX_SIZE 100
-
+using namespace std;
 class Stack {
 private:
     int data[MAX_SIZE];
@@ -12,7 +12,7 @@ public:
     }
     void push(int value) {
         if (top == MAX_SIZE - 1) {
-            std::cout << "Stack is full. Cannot push more elements.\n";
+            cout << "Stack is full. Cannot push more elements.\n";
             return;
         }
           top++;
@@ -21,7 +21,7 @@ public:
 
     int pop() {
         if (top == -1) {
-            std::cout << "Stack is empty. Cannot pop any element.\n";
+            cout << "Stack is empty. Cannot pop any element.\n";
             return -1; 
         }
         return top--;
@@ -29,7 +29,7 @@ public:
 
     int peek() {
         if (top == -1) {
-            std::cout << "Stack is empty. Cannot peek.\n";
+            cout << "Stack is empty. Cannot peek.\n";
             return -1; // Return a sentinel value to indicate an error
         }
         return data[top];
@@ -37,14 +37,14 @@ public:
 
     void display() {
         if (top == -1) {
-            std::cout << "Stack is empty.\n";
+            cout << "Stack is empty.\n";
             return;
         }
         std::cout << "Stack contents: ";
         for (int i = 0; i <= top; ++i) {
-            std::cout << data[i] << " ";
+            cout << data[i] << " ";
         }
-        std::cout << "\n";
+        cout << "\n";
     }
 };
 
@@ -55,7 +55,7 @@ int main() {
     myStack.push(20);
     myStack.push(30);
 
-    std::cout << "Top element: " << myStack.peek() << "\n";
+    cout << "Top element: " << myStack.peek() << "\n";
 
     myStack.pop();
     myStack.display();
